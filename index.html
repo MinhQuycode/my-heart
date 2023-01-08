@@ -2,7 +2,7 @@
 <HTML>
 
 <HEAD>
-    <TITLE> HELLO EM </TITLE>
+    <TITLE>CHÚC MỪNG NĂM MỚI</TITLE>
     <META NAME="Generator" CONTENT="EditPlus">
     <META NAME="Author" CONTENT="">
     <META NAME="Keywords" CONTENT="">
@@ -29,54 +29,9 @@
     <div class="box">
         <canvas id="pinkboard"></canvas>
     </div>
-    <h1 class="name">My Crush</h1>
-
-    <div id="btn_box-video">
-        <h5>Đầu tiên hãy nhấn vào đây nè !</h5>
-        <button id="btn_open_video">
-            <span>Click me !</span>
-            <div></div>
-        </button>
-    </div>
-
-    <div id="box_video">
-        <h5 class="title-video">Cùng nghe bản nhạc mà anh thích nhé crush =)) </h5>
-        <video id="video_id" src="./video/videoplayback.mp4" controls></video>
-        <h5 style="margin-top: 3rem;">Nhớ nghe hết nha, còn có 1 thứ hay ho khi nghe hết nha !</h5>
-    </div>
-
-    <!-- ACtion button -->
-    <script>
-        const idBoxVideo = document.getElementById("box_video")
-        const idBtnVideo = document.getElementById("btn_open_video")
-        const idBoxBtn = document.getElementById("btn_box-video")
-        const videoId = document.getElementById("video_id")
-        const boxHeart = document.querySelector(".box")
-        const name = document.querySelector(".name")
-
-
-        function handleClickOpenBoxVideo() {
-            videoId.play()
-            idBoxVideo.style.display = "block"
-            idBoxBtn.style.display = "none"
-        }
-        idBtnVideo.addEventListener("click", handleClickOpenBoxVideo)
-
-
-        function checkTimeVideo() {
-            let duration = videoId.duration;
-            let currentTime = videoId.currentTime;
-            if (duration === currentTime) {
-                boxHeart.style.opacity = 1
-                idBoxVideo.style.display = "none"
-                name.style.display = "block"
-            }
-        }
-        setInterval(() => {
-            checkTimeVideo()
-        }, 1000);
-    </script>
-
+    <h1 class="name">HAPPY NEW YEAR</h1>
+    <audio class="audio" src="./hpny.mp3" controls autoplay></audio>
+  
     <!-- Animation heart -->
     <script>
         var settings = {
