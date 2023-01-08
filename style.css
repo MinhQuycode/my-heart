@@ -15,6 +15,7 @@ body {
 	transform: translate(-50%, -50%);
 	display: flex;
 	flex-direction: column;
+	opacity: 0;
 }
 
 #pinkboard {
@@ -63,6 +64,7 @@ body {
 		transform: scale(1);
 	}
 }
+
 .name{
   font-family: 'Mr Dafoe';
   margin: 0;
@@ -70,52 +72,91 @@ body {
   margin-top: -0.6em;
   color: white;
   text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
-   z-index:1000
+  z-index:1000;
+  display: none;
 }
-.text-animation{
-	top: 10%;
-	left: 50%;
-	position: absolute;
-	width: 100%;
+
+/* Box video */
+#box_video{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	display: none;
 }
-.heading {
-	width: 100vw;
-	letter-spacing: 4px;
+h5{
 	font-family: 'Mr Dafoe';
-	font-size: 1.5em;
-	
-	transform: translateX(-50%);
-	color: white;
-	text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
+  margin: 0;
+  font-size: 1.5em;
+  margin-top: -0.6em;
+  color: white;
+  text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
+   z-index:1000;
+   margin-bottom: 2rem;
+}
+#btn_box-video{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 30px;
+}
+#btn_open_video {
+    position: relative;
+    padding: 8px 16px;
+    display: block;
+    overflow: hidden;
+	cursor: pointer;
   }
-  .animationOne {
-	animation: animationOne 1s 5ms 1;
+
+  #btn_open_video span {
+    position: relative;
+    color: #fff;
+    z-index: 1;
   }
-  @keyframes animationOne {
-	from {
-	  margin-left: 100px;
-	  opacity: 0;
-	  filter: blur(5px);
-	}
-	to {
-	  margin-left: 0;
-	  opacity: 1;
-	  filter: blur(0);
-	}
+
+  #btn_open_video > div {
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: #ff3e00;
+    transition: 0.5s;
   }
-  .animationTwo {
-	animation: animationTwo 1s 5ms 1;
-	opacity: 0;
+
+  #btn_open_video > div::after,
+  #btn_open_video > div::before {
+    content: '';
+    width: 200%;
+    height: 200%;
+    position: absolute;
   }
-  @keyframes animationTwo {
-	from {
-	  margin-left: 0;
-	  opacity: 1;
-	  filter: blur(0);
-	}
-	to {
-	  margin-left: 100px;
-	  opacity: 0;
-	  filter: blur(5px);
-	}
+
+  #btn_open_video > div::before {
+    border-radius: 45%;
+    background: rgba(20, 20, 20, 1);
+    animation: animateBtn 5s linear infinite;
   }
+
+  #btn_open_video > div::after {
+    border-radius: 40%;
+    background: rgba(20, 20, 20, 0.5);
+    animation: animateBtn 10s linear infinite;
+  }
+
+  #btn_open_video:hover > div {
+    top: -150px;
+  }
+
+  @keyframes animateBtn {
+    0% {
+      transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -75%) rotate(360deg);
+    }
+  }
+
+/* End box video */
